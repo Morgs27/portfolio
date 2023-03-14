@@ -1,23 +1,30 @@
-import { useState } from 'react'
-import './styles/App.scss'
+import { useEffect, useState } from 'react'
+import './assets/styles/App.scss'
 
 import Lottie from 'react-lottie-player'
-import scroll from './scroll.json';
+import scroll from './assets/animations/scroll.json';
+import frame from './assets/animations/frame.json';
 
 import { FaGithub, FaLinkedin} from 'react-icons/fa';
 import {GrMail} from 'react-icons/gr'
 import {GiAbstract030} from 'react-icons/gi'
 
-import initCube from './components/Cube/Cube';
+import initCube from './assets/components/Cube/Cube';
 
-setTimeout(() => {
+import addObservers from './assets/scripts/intersection-observers';
+
+
+function App() {
+
+  useEffect(() => {
 
     let cubeContainer = document.getElementById('cube-container')
     initCube(cubeContainer)
 
-}, 2000);
-
-function App() {
+    addObservers();
+   
+  }, [])
+  
 
   return (
 
@@ -27,18 +34,18 @@ function App() {
       <div className="landing-page">
 
         <div className="header">
-          <div className="icon spin-hover">
+          <div className="icon spin-hover observe fade down">
             <GiAbstract030></GiAbstract030>
           </div>
           <div className="navigation">
 
-            <a href="" className="nav-link strike-hover">
+            <a href="" className="nav-link strike-hover observe fade down delay-15 duration-10">
               About
             </a>
-            <a href="" className="nav-link strike-hover">
+            <a href="" className="nav-link strike-hover observe fade down delay-18 duration-10">
               Projects
             </a>
-            <a href="" className="nav-link strike-hover">
+            <a href="" className="nav-link strike-hover observe fade down delay-21 duration-10">
               Contact
             </a>
 
@@ -48,17 +55,17 @@ function App() {
         <div className="content">
 
           <div className="text">
-            <div className="title">Morgan Daniel</div>
-            <div className="sub-title">FULL-STACK DEVELOPER</div>
+            <div className="title observe fade">Morgan Daniel</div>
+            <div className="sub-title observe fade delay-8">FULL-STACK DEVELOPER</div>
             <div className="buttons">
 
-              <a href="" className="button float-hover">
+              <a href="" className="button float-hover observe fade delay-2 duration-15">
                 <FaGithub></FaGithub>
               </a>
-              <a href="" className="button float-hover">
+              <a href="" className="button float-hover observe fade delay-3 duration-15">
                 <FaLinkedin></FaLinkedin>
               </a>
-              <a href="" className="button float-hover">
+              <a href="" className="button float-hover observe fade delay-6 duration-15">
                <GrMail></GrMail>
               </a>
 
@@ -67,8 +74,12 @@ function App() {
           </div>
 
           <div className="cube-container">
-            <div className="cube" id = 'cube-container'>
-
+            <div className="cube observe fade down delay-30 duration-10" id = 'cube-container' >
+              <Lottie 
+              animationData = {frame}
+              play
+              className='frame-animation'
+              />
             </div>
           </div>
 
@@ -80,7 +91,7 @@ function App() {
           animationData = {scroll}
           loop
           play
-          className='footer-animation'
+          className='footer-animation observe fade down delay-30'
           />
 
         </div>

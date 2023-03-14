@@ -1,0 +1,11 @@
+@for $counter from 0 through 100{
+    .delay-#{$counter} {
+        transition-delay: $counter * 0.1 + s !important;
+    }
+}
+
+@for $counter from 0 through 100{
+    .duration-#{$counter} {
+        transition-duration: $counter * 0.1 + s !important;
+    }
+}

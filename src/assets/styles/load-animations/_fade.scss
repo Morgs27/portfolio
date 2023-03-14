@@ -1,0 +1,35 @@
+.fade{
+    filter: blur(2px);
+    transform: translateX(-10px);
+    opacity: 0;
+    transition: 1s ease;
+
+    &.down{
+        transform: translateY(-10px);
+    }
+    &.up{
+        transform: translateY(10px);
+    }
+    &.left{
+        transform: translateY(10px);
+    }
+
+    &.show{
+        filter: blur(0px);
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+
+}
+
+
+
+.landing-page .content .text .title.fade{
+
+    transform: translateX(-15px) !important;
+
+    &.show{
+        transform: translateX(-5px) !important;
+    }
+}
