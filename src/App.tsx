@@ -8,9 +8,20 @@ import { FaGithub, FaLinkedin} from 'react-icons/fa';
 import {GrMail} from 'react-icons/gr'
 import {GiAbstract030} from 'react-icons/gi'
 
+import initCube from './components/Cube/Cube';
+
+setTimeout(() => {
+
+    let cubeContainer = document.getElementById('cube-container')
+    initCube(cubeContainer)
+
+}, 2000);
+
 function App() {
 
   return (
+
+    
     <div className="App">
       
       <div className="landing-page">
@@ -56,7 +67,9 @@ function App() {
           </div>
 
           <div className="cube-container">
-            <div className="cube"></div>
+            <div className="cube" id = 'cube-container'>
+
+            </div>
           </div>
 
         </div>
@@ -73,7 +86,13 @@ function App() {
         </div>
 
       </div>
+
+      <div className="about-us-page">
+
+      </div>
+
     </div>
+
   )
 }
 
