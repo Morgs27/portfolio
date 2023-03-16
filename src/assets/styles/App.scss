@@ -40,11 +40,21 @@ $roboto: 'Roboto', sans-serif;
     justify-content: $justify;
 }
 
+// Calculate True value for 1vh
+@mixin trueHeight($height: 100){
+    height: #{$height}vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * $height);
+}
+
 // Reset Default Styles
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 
@@ -61,6 +71,36 @@ body {
     scroll-snap-align: center;
 }
 
+.background{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: none;
+    padding: none;
+    width: 100%;
+    height: 100%;
+}
+
+.hide{
+  transition: 1s;
+  opacity: 0;
+}
+
+#trailer{
+    height: 5px;
+    width: 5px;
+    background: $white;
+    border-radius: 50%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 500ms ease;
+}
+
+
 .landing-page{
 
     display: grid;
@@ -70,8 +110,7 @@ body {
 
     width: 100%;
 
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
+    @include trueHeight;
 
     .header{
         grid-row: 1;
@@ -83,15 +122,65 @@ body {
 
 
         @include flex;
+        
 
-        .icon{
+        .resume{
 
-            @include flex;
             height: 100%;
-            font-size: 30px;
-            color: $white;
+            font-size: 14px;
+            @include flex;
+            text-decoration: none;
 
+            *{
+                transition: 0.6s;
+            }
+
+            .icon{
+                @include flex;
+                position: relative;
+                height: 30px;
+                float: left;
+                width: 30px;
+
+            }
+
+            .text{
+                margin-left: 15px;
+                color:rgba($white, 0.8);
+                @include font-roboto($spacing: 0.6mm);
+            }
+
+            .square1, .square2 {
+                width: 20px;
+                height: 20px;
+                border: 1px solid $white;
+                transform: rotate(45deg);
+                position: absolute;
+                transition: 0.4s;
+                float: left;
+            }
+
+            .square2{
+                transition: opacity 0.8s ease-in, transform 0.4s linear;
+            }
+
+            &:hover{
+                .square1{
+                    transform: rotate(45deg) scale(0.15);
+                    background: rgba($white, 0.8);
+                }
+                .square2{
+                    transform: rotate(45deg) scale(2);
+                    opacity: 0.6;
+                }
+                .text{
+                    transform: translateX(15px);
+                    opacity: 0.6;
+                }
+            }
+            
         }
+
         .navigation{
             @include flex($justify: flex-end);
             flex-grow: 1;
@@ -102,6 +191,7 @@ body {
                 color:rgba($white, 0.8);
                 text-decoration: none;
                 @include font-roboto($spacing: 0.6mm);
+                padding: 5px;
             }
         }
     }
@@ -132,15 +222,18 @@ body {
             .buttons{
                 @include flex;
                 font-size: 20px;
+                // gap: 20px;
+
+                transform: translateX(-10px);
 
                 .button{
                     color: rgba($white, 0.7);
                     padding:  2px 10px;
                 }
 
-                .button:nth-child(1){
-                    padding-left: 0px;
-                }
+                // .button:nth-child(1){
+                //     padding-left: 0px;
+                // }
             }
 
 
@@ -149,11 +242,20 @@ body {
         .cube-container{
             @include flex;
 
+            &hover{
+                cursor: url(hand.cur),  grab;
+            }
+
             .cube{
                 max-width: 75vw; 
                 width: 400px;
                 aspect-ratio: 1;
+
+                &hover{
+                    cursor: grab;
+                }
             }
+
 
             .frame-animation{
                 filter: invert(0.8);
@@ -176,11 +278,31 @@ body {
 
 .about-us-page{
 
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
+    @include trueHeight;
 
     background: rgba($black, 0.8);
     width: 100%;
+}
+
+// Media Query for Mobile Devices
+@media (max-width: 530px ) {
+
+    .landing-page{
+
+        grid-template-rows: 140px 1fr 140px;
+
+        .header{
+            flex-direction: column;
+
+            .navigation{
+
+                justify-content: center;
+                margin-top: 20px;
+
+            }
+
+        }
+    }
 }
 
 

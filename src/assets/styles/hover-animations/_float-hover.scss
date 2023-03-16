@@ -1,14 +1,35 @@
+$white : #FFF4E9;
+
 .float-hover{
-    transform: translate(0px);
+
     transition: transform 0.2s ease-in;
-    
     transition-duration: 0.2s !important;
     transition-delay: 0s !important;
+    position: relative;
+}
+
+.float-hover::after{
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 1px;
+    background: rgba($white, 0.8);
+    bottom: 0;
+    left: 30%;
+    width: 0;
+    transition: 0.3s ease-in;
+    opacity: 0.4;
+    
 }
 
 .float-hover:hover{
+
     transform: translateY(-2px) scale(1.1);
     cursor: pointer;
     filter: brightness(160%);
 
+    &::after{
+        width: 40%;
+        opacity: 0.8;
+    }
 }

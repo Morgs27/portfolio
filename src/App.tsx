@@ -1,20 +1,21 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import './assets/styles/App.scss'
 
-import Lottie from 'react-lottie-player'
-import scroll from './assets/animations/scroll.json';
+import Lottie from 'react-lottie-player';
 import frame from './assets/animations/frame.json';
+import scrollHint from './assets/animations/scroll.json'
+
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 import { FaGithub, FaLinkedin} from 'react-icons/fa';
 import {GrMail} from 'react-icons/gr'
-import {GiAbstract030} from 'react-icons/gi'
-import {FaConnectdevelop} from 'react-icons/fa'
-import {BsHexagon} from 'react-icons/bs';
 
 import initCube from './assets/components/Cube/Cube';
 
 import addObservers from './assets/scripts/intersection-observers';
 import fixVh from './assets/scripts/fixVh';
+import ambientBackground from './assets/scripts/ambientBackground';
+import initTrailer from './assets/scripts/mouseTrailer';
 
 function App() {
 
@@ -29,6 +30,19 @@ function App() {
 
     // Add Intersection Observers to elements
     addObservers();
+
+    // Add Mouse Trailer
+    // const trailer = document.getElementById('trailer');
+    // initTrailer(trailer)
+
+    // Initialize Particle Background
+    // let backgroundCanvas = document.querySelector('.background') as HTMLCanvasElement;
+    // ambientBackground({canvas: backgroundCanvas, numberParticles: 7});
+
+    let footer = document.querySelector('.footer');
+    window.onscroll = e => {
+      footer?.classList.add('hide');
+    }
    
   }, [])
   
@@ -37,25 +51,32 @@ function App() {
 
     
     <div className="App">
+
+      <canvas className="background" width = {window.innerWidth} height = {window.innerHeight}></canvas>
       
+      <div id="trailer"></div>
+
       <div className="landing-page page">
 
         <div className="header">
-          <a href = "" className="icon spin-hover observe fade down" >
-            {/* <GiAbstract030></GiAbstract030> */}
-            {/* <FaConnectdevelop></FaConnectdevelop> */}
-            <BsHexagon></BsHexagon>
+          <a href = '#' className="resume observe fade down delay-12">
+            <div className="icon" >
+              <div className="square1"></div>
+              <div className="square2"></div>
+            </div>
+            <div className="text">RESUME</div>
           </a>
+         
           <div className="navigation">
 
-            <a href="" className="nav-link strike-hover observe fade down delay-16 duration-10">
-              About
+            <Link to="about" spy={true} smooth={true} duration={500} className="nav-link strike-hover observe fade down delay-12 duration-10">
+              ABOUT
+            </Link>
+            <a href="" className="nav-link strike-hover observe fade down delay-15 duration-10">
+              PROJECTS
             </a>
-            <a href="" className="nav-link strike-hover observe fade down delay-19 duration-10">
-              Projects
-            </a>
-            <a href="" className="nav-link strike-hover observe fade down delay-22 duration-10">
-              Contact
+            <a href="" className="nav-link strike-hover observe fade down delay-18 duration-10">
+              CONTACT
             </a>
 
           </div>
@@ -65,16 +86,16 @@ function App() {
 
           <div className="text">
             <div className="title observe fade">Morgan Daniel</div>
-            <div className="sub-title observe fade delay-3">FULL-STACK DEVELOPER</div>
+            <div className="sub-title observe fade delay-2">FULL-STACK DEVELOPER</div>
             <div className="buttons">
 
-              <a href="" className="button float-hover observe fade delay-8 duration-15">
+              <a href="" className="button float-hover observe fade delay-6 duration-11">
                 <FaGithub></FaGithub>
               </a>
-              <a href="" className="button float-hover observe fade delay-9 duration-15">
+              <a href="" className="button float-hover observe fade delay-7 duration-10">
                 <FaLinkedin></FaLinkedin>
               </a>
-              <a href="" className="button float-hover observe fade delay-10 duration-15">
+              <a href="" className="button float-hover observe fade delay-8 duration-9">
                <GrMail></GrMail>
               </a>
 
@@ -83,7 +104,7 @@ function App() {
           </div>
 
           <div className="cube-container">
-            <div className="cube observe fade down delay-16 duration-10" id = 'cube-container' >
+            <div className="cube observe fade down delay-12 duration-10" id = 'cube-container' >
               <Lottie 
               animationData = {frame}
               play
@@ -97,19 +118,19 @@ function App() {
         <div className="footer">
 
           <Lottie 
-          animationData = {scroll}
+          animationData = {scrollHint}
           loop
           play
-          className='footer-animation observe fade down delay-16'
+          className='footer-animation observe fade down delay-25'
           />
 
         </div>
 
       </div>
 
-      <div className="about-us-page page">
+      <Element className="about-us-page page" id = 'about' name = 'about'>
 
-      </div>
+      </Element>
 
 
 
