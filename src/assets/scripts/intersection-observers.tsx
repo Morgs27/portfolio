@@ -32,7 +32,12 @@ export default function addObservers(){
                     })
                 }, delay + duration);
 
-            } 
+            }
+            else{
+                if(entry.target.classList.contains('continous')){
+                    entry.target.classList.remove('show');
+                }
+            }
         })
     })
     

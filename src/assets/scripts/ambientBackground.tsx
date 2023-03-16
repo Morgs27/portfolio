@@ -9,26 +9,29 @@ type particle = {
     x: number, 
     y: number,
     dx: number, 
-    dy: number
+    dy: number,
+    history: number[]
 }
 
 export default function ambientBackground({canvas, numberParticles} : ambientBackgroundProps){
     
     let ctx = canvas.getContext('2d');
+    let body = document.getElementsByTagName('body')[0]
+    let height = body.offsetHeight;
+    let width = body.offsetHeight;
 
-    let height = window.innerHeight;
-    let width = window.innerWidth;
+    console.log(height);
 
     let particles : particle[] | undefined;
 
     particles = Array(numberParticles).fill(undefined).map(() => {
         return {
-            size: 2,
+            size: 1,
             x: Math.floor(Math.random() * width),
-            y: Math.floor(Math.random() * height),
-            dx: Math.random() > 0.5? Math.random() * 0.6  : Math.random() * -0.6,
-            dy: Math.random() > 0.5? Math.random() * 0.6 : Math.random() * -0.6
- 
+            y: window.innerHeight + (Math.random() * height) ,
+            dx: 0,
+            dy: (-1 * Math.random()) - 0.1,
+            history: []
         }
     })
 
@@ -41,14 +44,17 @@ export default function ambientBackground({canvas, numberParticles} : ambientBac
             let newDx = particle.dx;
             let newDy = particle.dy
 
-            if (newX > width || newX < 0){
-                newDx = Math.random() > 0.5? Math.random()  : Math.random() * -1;
-            }
-            if (newY > height || newY < 0){
-                newDy = Math.random() > 0.5? Math.random()  : Math.random() * -1;
+            if (newY < 0){
+                newY = height;
             }
 
-            return {...particle, x: newX, y: newY, dx: newDx, dy: newDy}
+            let history = particle.history;
+            if (history.length > 20){
+                history.shift();
+            }
+            history.push(particle.x, particle.y)
+
+            return {...particle, x: newX, y: newY, dx: newDx, dy: newDy, history: history}
         })
 
 
@@ -71,8 +77,6 @@ export default function ambientBackground({canvas, numberParticles} : ambientBac
                 ctx.beginPath();
                 ctx.arc(particle.x, particle.y, particle.size * 2, 0, 2 * Math.PI);
                 ctx.fill();
-
-
 
             }
 

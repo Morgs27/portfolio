@@ -5,7 +5,7 @@ import Lottie from 'react-lottie-player';
 import frame from './assets/animations/frame.json';
 import scrollHint from './assets/animations/scroll.json'
 
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link, Element } from 'react-scroll'
 
 import { FaGithub, FaLinkedin} from 'react-icons/fa';
 import {GrMail} from 'react-icons/gr'
@@ -32,12 +32,14 @@ function App() {
     addObservers();
 
     // Add Mouse Trailer
-    // const trailer = document.getElementById('trailer');
-    // initTrailer(trailer)
+    const trailer = document.getElementById('trailer');
+    initTrailer(trailer)
 
     // Initialize Particle Background
-    // let backgroundCanvas = document.querySelector('.background') as HTMLCanvasElement;
-    // ambientBackground({canvas: backgroundCanvas, numberParticles: 7});
+    let backgroundCanvas = document.querySelector('.background') as HTMLCanvasElement;
+    backgroundCanvas.width = window.innerWidth;
+    backgroundCanvas.height = document.getElementsByTagName('body')[0].offsetHeight;
+    ambientBackground({canvas: backgroundCanvas, numberParticles:100});
 
     let footer = document.querySelector('.footer');
     window.onscroll = e => {
@@ -52,11 +54,14 @@ function App() {
     
     <div className="App">
 
-      <canvas className="background" width = {window.innerWidth} height = {window.innerHeight}></canvas>
+      <canvas className="background"></canvas>
       
-      <div id="trailer"></div>
+      <div id="trailer">
+        <div className="inner"></div>
+        <div className="outer"></div>
+      </div>
 
-      <div className="landing-page page">
+      <div className="landing-page">
 
         <div className="header">
           <a href = '#' className="resume observe fade down delay-12">
@@ -69,15 +74,15 @@ function App() {
          
           <div className="navigation">
 
-            <Link to="about" spy={true} smooth={true} duration={500} className="nav-link strike-hover observe fade down delay-12 duration-10">
+            <Link to="about" offset={-100} spy={false} smooth={true} duration={500} className="nav-link interactive-surround strike-hover observe fade down delay-12 duration-10">
               ABOUT
             </Link>
-            <a href="" className="nav-link strike-hover observe fade down delay-15 duration-10">
+            <Link to="projects" offset={-100} spy={false} smooth={true} duration={500} className="nav-link interactive-surround strike-hover observe fade down delay-15 duration-10">
               PROJECTS
-            </a>
-            <a href="" className="nav-link strike-hover observe fade down delay-18 duration-10">
+            </Link>
+            <Link to="contact" offset={-100} spy={false} smooth={true} duration={500} className="nav-link interactive-surround strike-hover observe fade down delay-18 duration-10">
               CONTACT
-            </a>
+            </Link>
 
           </div>
         </div>
@@ -89,13 +94,13 @@ function App() {
             <div className="sub-title observe fade delay-2">FULL-STACK DEVELOPER</div>
             <div className="buttons">
 
-              <a href="" className="button float-hover observe fade delay-6 duration-11">
+              <a href="" className="button interactive-surround observe fade delay-6 duration-11">
                 <FaGithub></FaGithub>
               </a>
-              <a href="" className="button float-hover observe fade delay-7 duration-10">
+              <a href="" className="button interactive-surround observe fade delay-7 duration-10">
                 <FaLinkedin></FaLinkedin>
               </a>
-              <a href="" className="button float-hover observe fade delay-8 duration-9">
+              <a href="" className="button interactive-surround observe fade delay-8 duration-9">
                <GrMail></GrMail>
               </a>
 
@@ -128,7 +133,53 @@ function App() {
 
       </div>
 
+      {/* <div className="seperator-8" ></div> */}
+
       <Element className="about-us-page page" id = 'about' name = 'about'>
+          
+          <div className="pageTitle">
+            
+          <div className="pointer observe continous">
+              <div className="inner"></div>
+              <div className="outer"></div>
+            </div>
+            <div className="number observe fade down delay-10">01.</div>
+            <div className="title  observe fade down delay-10">ABOUT</div>
+            <div className="line  observe fade down delay-10"></div>
+          </div>
+          
+
+      </Element>
+
+      <Element className="about-us-page page" id = 'about' name = 'projects'>
+          
+          <div className="pageTitle">
+            
+            <div className="pointer observe continous">
+              <div className="inner"></div>
+              <div className="outer"></div>
+            </div>
+            <div className="number observe fade down delay-10">02.</div>
+            <div className="title  observe fade down delay-10">PROJECTS</div>
+            <div className="line  observe fade down delay-10"></div>
+          </div>
+          
+
+      </Element>
+
+      <Element className="about-us-page page" id = 'about' name = 'contact'>
+          
+          <div className="pageTitle">
+            
+          <div className="pointer observe continous">
+              <div className="inner"></div>
+              <div className="outer"></div>
+            </div>
+            <div className="number observe fade down delay-10">03.</div>
+            <div className="title  observe fade down delay-10">CONTACT</div>
+            <div className="line  observe fade down delay-10"></div>
+          </div>
+          
 
       </Element>
 

@@ -1,0 +1,7 @@
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="triangle">
+<rect width="30" height="30" fill="none"/>
+<path id="outer" d="M7.75 3.70966L25.055 14.5L7.75 25.2903L7.75 3.70966Z" stroke="white"/>
+<path id="inner" d="M7.75 3.70966L25.055 14.5L7.75 25.2903L7.75 3.70966Z" stroke="white"/>
+</g>
+</svg>
