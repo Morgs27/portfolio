@@ -1,5 +1,6 @@
 
 @use 'scroll-bar';
+@use 'trailer';
 
 // Load Animations
 @use './load-animations/fade';
@@ -68,10 +69,7 @@ body {
     scroll-snap-type: y proximity;
 }
 
-.page{
-    scroll-snap-align: center;
-}
-
+// Background for ambient particles
 .background{
     position: absolute;
     left: 0;
@@ -81,53 +79,16 @@ body {
 }
 
 .hide{
-  transition: 1s;
-  opacity: 0;
-}
-
-#trailer{
-
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    z-index: 1000;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 500ms ease;
-    @include flex;
-
-    .inner, .outer{
-        transition: 0.6s ease-in;
-        height: 10px;
-        width: 10px;
-        border: 1px solid $white;
-        transform: rotate(45deg);
-        position: absolute;
-    }
-
-    &.active{
-        .inner{
-            transform: scale(0.15) rotate(45deg);
-            background: $white;
-        }
-        .outer{
-            transform: scale(1.6) rotate(45deg);
-        }
-    }
-
-}
-
-html:hover{
-    #trailer{
-        opacity: 1;
-    }
-}
-
+    transition: 0.3s;
+    opacity: 0 !important;
+  }
 
 .landing-page{
+
+    margin-bottom: 150px;
     overflow: hidden;
     display: grid;
-    grid-template-rows: 100px 1fr 140px;
+    grid-template-rows: 100px 1fr 100px;
     grid-template-columns: 1fr;
     gap: 10px;
 
@@ -249,13 +210,10 @@ html:hover{
                 transform: translateX(-10px);
 
                 .button{
-                    transition: color 0.6s ease;
+
                     color: rgba($white, 0.7);
                     padding:  2px 15px;
 
-                    &:hover{
-                        color: rgba($white, 0.9);
-                    }
                 }
 
             }
@@ -290,10 +248,38 @@ html:hover{
     .footer{
         @include flex;
         grid-row: 3;
-        margin-bottom: 30px;
+        margin-bottom: 5px;
+
         .footer-animation{
-            height: 90%;
+            height: 100%;
             filter: invert(1);
+        }
+
+        .scrollHint{
+            height: 100%;
+            width: 30px;
+            @include flex($direction: column);
+
+            .text{
+                transform: rotate(90deg);
+                font-size: 10px;
+                letter-spacing: 0.5mm;
+            }
+
+            .line{
+
+                margin-top: 30px;
+
+                width: 10px;
+                height: 10px;
+                border: 1px solid $white;
+                transform: rotate(45deg);
+                transition: 0.3s;
+            }
+
+            &.active{
+
+            }
         }
     }
 }
@@ -303,7 +289,16 @@ html:hover{
 
     .landing-page{
 
-        grid-template-rows: 140px 1fr 140px;
+        grid-template-rows: 140px 1fr 100px;
+
+        .footer{
+            margin-top: 20px;
+        }
+
+        .content{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
 
         .header{
             flex-direction: column;
@@ -377,13 +372,13 @@ html:hover{
 
             .inner{
                 transform: rotate(135deg) scale(0.15);
-                animation: square-highlight-inner 1s ease-in;
+                animation: square-highlight-inner 0.6s ease-in;
                 background: $white;
             }
 
             .outer{
                 transform: rotate(135deg) scale(1.5);
-                animation: square-highlight-outer 1s ease-in;
+                animation: square-highlight-outer 0.6s ease-in;
             }
 
         }
@@ -407,8 +402,90 @@ html:hover{
 
 .about-us-page{
 
-    @include trueHeight;
+    height: calc(100vh - 60px);
+    height: calc((var(--vh, 1vh) * 100) - 70px);
     background: $black;
+    margin-bottom: 200px;
+
+    .content{
+        // height: calc(100% - 160px);
+        height: calc(100% - 40px - 80px);
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+
+        .verticalLine{
+            height: 100%;
+            width: 1px;
+            background: rgba($white, 0.1);
+            margin-inline: 40px;
+        }
+
+        .container{
+            @include flex($justify: space-around, $direction: column, $align: flex-start);
+
+            .item{
+
+                font-size: 14px;
+                letter-spacing: 0.4mm;
+                color: rgba($white, 1);
+                line-height: 1.6;
+                position: relative;
+
+                .info{
+                    margin-left: clamp(0px, 3vw, 100px);
+                    max-width: 900px;
+                }
+
+                .pointer{
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    background: $black;
+                    border: 1px solid white;
+                    left: -40.0px;
+                    top: 50%;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                    z-index: 20;
+                }
+
+                .title{
+                    color: rgba($white, 0.7);
+                    font-size: 16px;
+                    line-height: 1.6;
+
+                }
+
+                .techStack{
+                    @include flex($direction: row);
+                    flex-wrap: wrap;
+
+                    margin-top: 20px;
+
+                    *{
+                        margin: 10px;
+                        font-size: 30px;
+                    }
+
+                    *:nth-child(1){
+                        margin-left: 0;
+                    }
+
+                    .break{
+                        width: 3px;
+                        height: 3px;
+                        border: 1px solid rgba($white, 0.3);
+                        transform: rotate(45deg);
+                        opacity: 0;
+                    }
+
+                }
+
+            }
+        }
+    }
 
 }
 

@@ -1,7 +1,7 @@
 export default function initTrailer(trailer: HTMLElement | null){
 
-    let inner = trailer?.querySelector('.inner');
-    let outer = trailer?.querySelector('.outer');
+    // @ts-ignore  
+    trailer.style.display = 'flex';
 
     const animateTrailer = (e:any) => {
 
@@ -24,15 +24,16 @@ export default function initTrailer(trailer: HTMLElement | null){
 
                 trailer.classList.remove('active');
     
-    
         }
 
     }
 
     window.onmousemove = e => {
 
+        // @ts-ignore  
         if (e.target.closest('.interactive-surround')){
 
+            // @ts-ignore  
             let target = e.target.closest('.interactive-surround');
             let targetWidth = target.offsetWidth;
             let targetHeight = target.offsetHeight;
@@ -48,14 +49,12 @@ export default function initTrailer(trailer: HTMLElement | null){
 
             }
 
-        
-            trailer.animate(keyframesTrailer, {
+            trailer?.animate(keyframesTrailer, {
                 duration: 800,
                 fill: 'forwards'
             })
 
             trailer?.classList.add('active')
-
 
         }
         else {

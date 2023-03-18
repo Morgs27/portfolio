@@ -1,0 +1,40 @@
+$white : #FFF4E9;
+
+#trailer{
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    justify-content: center;
+    align-items: center;
+
+    .inner, .outer{
+        transition: 0.6s ease-in;
+        height: 10px;
+        width: 10px;
+        border: 1px solid $white;
+        transform: rotate(45deg);
+        position: absolute;
+    }
+
+    &.active{
+        .inner{
+            transform: scale(0.15) rotate(45deg);
+            background: $white;
+        }
+        .outer{
+            transform: scale(1.6) rotate(45deg);
+        }
+    }
+
+}
+
+html:hover{
+    #trailer{
+        opacity: 1;
+    }
+}

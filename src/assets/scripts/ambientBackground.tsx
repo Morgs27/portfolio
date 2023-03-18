@@ -10,7 +10,8 @@ type particle = {
     y: number,
     dx: number, 
     dy: number,
-    history: number[]
+    history: number[],
+    opacity: number
 }
 
 export default function ambientBackground({canvas, numberParticles} : ambientBackgroundProps){
@@ -30,8 +31,9 @@ export default function ambientBackground({canvas, numberParticles} : ambientBac
             x: Math.floor(Math.random() * width),
             y: window.innerHeight + (Math.random() * height) ,
             dx: 0,
-            dy: (-1 * Math.random()) - 0.1,
-            history: []
+            dy: (-1 * Math.random()) - 0.3,
+            history: [],
+            opacity: Math.floor(Math.random() * 0.5)
         }
     })
 
