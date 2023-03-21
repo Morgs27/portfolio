@@ -16,6 +16,9 @@ import addObservers from './assets/scripts/intersection-observers';
 import fixVh from './assets/scripts/fixVh';
 import ambientBackground from './assets/scripts/ambientBackground';
 import initTrailer from './assets/scripts/mouseTrailer';
+import pageBreak from './assets/components/Footer';
+import PageBreak from './assets/components/Footer';
+import Footer from './assets/components/Footer';
 
 function App() {
 
@@ -258,7 +261,7 @@ function App() {
 
       </Element>
 
-
+      <Footer></Footer>
 
     </div>
 
