@@ -1,11 +1,11 @@
 
 import { useEffect } from 'react';
 
-export default function Footer(){
+export default function Footer({number} : any){
 
   useEffect(() => {
-
-    const wrapper = document.getElementById("tiles");
+    console.log(number);
+    const wrapper = document.getElementById("tiles" + number);
   
     let columns = 0,
         rows = 0
@@ -28,7 +28,7 @@ export default function Footer(){
       if (wrapper){
         wrapper.innerHTML = "";
         
-        const size = document.body.clientWidth > 800 ? 12 : 10;
+        const size = document.body.clientWidth > 800 ? 10 : 10;
         
         columns = Math.floor(document.body.clientWidth / size);
         rows = Math.floor(document.body.clientHeight / size);
@@ -48,12 +48,12 @@ export default function Footer(){
   },[])
   
     return (
-        <div className="page-break observe">
+        <div className="page-break observe fade up seperator">
 
           <div className="footer-background">
             <div className="cover left"></div>
             <div className="cover right"></div>
-            <div className="grid" id = 'tiles'>
+            <div className="grid" id = {'tiles' + number}>
               
               
             </div>
@@ -63,39 +63,7 @@ export default function Footer(){
             <div className="top-cover"></div>
           </div>
 
-          <div className="inner-cube">
-            <span></span>
-            <span></span>
-          </div>
-
-          <div className="small-cube left outer">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-          <div className="small-cube left">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-          <div className="small-cube right">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-          <div className="small-cube right outer">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
+         
       </div>
     )
 }

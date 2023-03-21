@@ -8,7 +8,7 @@ import { Link, Element } from 'react-scroll'
 
 import { FaCss3Alt, FaGithub, FaHtml5, FaJs, FaLinkedin, FaNodeJs, FaPhp, FaReact, FaSass} from 'react-icons/fa';
 import {GrMail} from 'react-icons/gr'
-import {SiFirebase, SiMysql, SiThreedotjs, SiTypescript, SiVite} from 'react-icons/si'
+import {SiFirebase, SiMysql, SiSqlite, SiThreedotjs, SiTypescript, SiVite} from 'react-icons/si'
 
 import initCube from './assets/components/Cube/Cube';
 
@@ -19,6 +19,7 @@ import initTrailer from './assets/scripts/mouseTrailer';
 import pageBreak from './assets/components/Footer';
 import PageBreak from './assets/components/Footer';
 import Footer from './assets/components/Footer';
+import Seperator from './assets/components/Seperator';
 
 function App() {
 
@@ -127,11 +128,6 @@ function App() {
 
           <div className="cube-container">
             <div className="cube observe fade down delay-12 duration-10" id = 'cube-container' >
-              <Lottie 
-              animationData = {frame}
-              play
-              className='frame-animation'
-              />
             </div>
           </div>
 
@@ -139,22 +135,18 @@ function App() {
 
         <div className="footer">
 
-          {/* <Lottie 
-          animationData = {scrollHint}
-          loop = {false}
-          play
-          className='footer-animation observe fade down delay-25'
-          /> */}
-
           <div className="scrollHint observe fade up delay-25 duration-10">
               <div className="text">SCROLL</div>
               <div className="line"></div>
           </div>
 
+          <Seperator number = {1}></Seperator>
         </div>
 
-      </div>
+        
 
+      </div>
+        
 
       <Element className="about-us-page page" id = 'about' name = 'about'>
           
@@ -199,23 +191,37 @@ function App() {
                 <div className="info observe fade delay-22">
                   <div className="title">Some technologies I'm familiar with...</div>
                   <div className="techStack">
-                    <FaHtml5></FaHtml5>
-                    <FaReact></FaReact>
-                    <div className="break"></div>
-                    <FaJs></FaJs>
-                    <SiTypescript></SiTypescript>
-                    <div className="break"></div>
-                    <FaCss3Alt></FaCss3Alt>
-                    <FaSass></FaSass>
-                    <div className="break"></div>
-                    <FaPhp></FaPhp>
-                    <FaNodeJs></FaNodeJs>
-                    <div className="break"></div>
-                    <SiMysql></SiMysql>
-                    <SiFirebase></SiFirebase>
-                    <div className="break"></div>
-                    <SiThreedotjs></SiThreedotjs>
-                    <SiVite></SiVite>
+
+                    <div className="pair">
+                      <FaHtml5></FaHtml5>
+                      <FaReact></FaReact>
+                    </div>
+
+                    <div className="pair">
+                      <FaJs></FaJs>
+                      <SiTypescript></SiTypescript>
+                    </div>
+
+                    <div className="pair">
+                      <FaCss3Alt></FaCss3Alt>
+                      <FaSass></FaSass>
+                    </div>
+
+                    <div className="pair">
+                      <FaPhp></FaPhp>
+                      <FaNodeJs></FaNodeJs>
+                    </div>
+
+                    <div className="pair">
+                      <SiMysql></SiMysql>
+                      <SiFirebase></SiFirebase>
+                    </div>
+
+                    <div className="pair">
+                      <SiThreedotjs></SiThreedotjs>
+                      <SiVite></SiVite>
+                    </div>
+                    
                   </div>
                   
                 </div>
@@ -225,11 +231,12 @@ function App() {
 
 
           </div>
-          
 
       </Element>
 
-      <Element className="about-us-page page" id = 'about' name = 'projects'>
+      
+
+      <Element className="projects-page page" id = 'about' name = 'projects'>
           
           <div className="pageTitle">
             
@@ -242,10 +249,137 @@ function App() {
             <div className="line  observe fade down delay-10"></div>
           </div>
           
+          <div className="content">
+
+            <div className="verticalLine observe fade delay-12"></div>
+
+            <div className="container">
+
+              <div className="item">
+                <div className="pointer observe fade delay-17"></div>
+                <div className="info observe fade delay-22">
+                  <div className="project">
+                    <div className="featured manager">Featured Project</div>
+                    <div className="title">
+                      SWGOH Team Manager
+                    </div>
+                    <div className="description">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
+                    </div>
+                    <div className="techStack">
+                      <FaHtml5></FaHtml5>
+                      <FaCss3Alt></FaCss3Alt>
+                      <FaJs></FaJs>
+                      <FaPhp></FaPhp>
+                      <SiMysql></SiMysql>
+                    </div>
+                    
+                    <div className="display">
+                      <img src="./home.PNG" alt="" />
+                      <div className="border">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    
+              </div>
+
+              <div className="item">
+                <div className="pointer observe fade delay-17"></div>
+                <div className="info observe fade delay-22">
+                  <div className="project">
+                    <div className="featured outfit">Featured Project</div>
+                    <div className="title">
+                      Outfit of Tomorrow
+                    </div>
+                    <div className="description">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
+                    </div>
+                    <div className="techStack">
+                      <FaHtml5></FaHtml5>
+                      <FaCss3Alt></FaCss3Alt>
+                      <FaJs></FaJs>
+                      <SiFirebase></SiFirebase>
+                    </div>
+                    
+                    <div className="display">
+                      <img src="./desk.PNG" alt="" />
+                      <div className="border">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    
+              </div>
+
+              <div className="item">
+                <div className="pointer observe fade delay-17"></div>
+                <div className="info observe fade delay-22">
+                  <div className="project">
+                    <div className="featured tsp">Featured Project</div>
+                    <div className="title">
+                      TSP Visualizer
+                    </div>
+                    <div className="description">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
+                    </div>
+                    <div className="techStack">
+                      <FaReact></FaReact>
+                      <SiTypescript></SiTypescript>
+                      <SiVite></SiVite>
+                    </div>
+                    
+                    <div className="display">
+                      <img src="./map.PNG" alt="" />
+                      <div className="border">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    
+              </div>
+
+              <div className="item">
+                <div className="pointer observe fade delay-17"></div>
+                <div className="info observe fade delay-22">
+                  <div className="project">
+                    <div className="featured game">Featured Project</div>
+                    <div className="title">
+                      Idle Fish
+                    </div>
+                    <div className="description">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
+                    </div>
+                    <div className="techStack">
+                      <FaReact></FaReact>
+                      <SiTypescript></SiTypescript>
+                      <FaNodeJs></FaNodeJs>
+                      <FaSass></FaSass>
+                      <SiVite></SiVite>
+                    </div>
+                    
+                    <div className="display">
+                      <img src="./fish.PNG" alt="" />
+                      <div className="border">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    
+            </div>
+
+            </div>
+
+           
+
+
+      
+
+          </div>
 
       </Element>
 
-      <Element className="about-us-page page" id = 'about' name = 'contact'>
+      <Element className="contact-page page" id = 'about' name = 'contact'>
           
           <div className="pageTitle">
             
@@ -257,11 +391,46 @@ function App() {
             <div className="title  observe fade down delay-10">CONTACT</div>
             <div className="line  observe fade down delay-10"></div>
           </div>
+
+          <div className="content">
+
+            <div className="verticalLine observe fade delay-15"></div>
+
+            <div className="container">
+
+              <div className="item">
+
+                <div className="pointer observe fade delay-17"></div>
+
+                <div className="info observe fade delay-22">
+                    <div className="title">
+                      Some information about me...
+                    </div>
+                    <br></br>
+                    <p>
+                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, dolore ratione maxime rem, veniam quis omnis nemo ducimus pariatur in odit voluptate autem error neque recusandae tenetur illo molestias nobis.
+                    </p>
+                    <br></br>
+                    <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto excepturi illum dolorem ipsum rem fugiat doloribus vero, atque adipisci, possimus placeat et deleniti, at repellendus nesciunt aperiam error fugit deserunt!
+                    </p>
+                    <br></br>
+                  </div>
+              </div>
+
+
+            </div>
+
+
+          </div>
+
           
+          
+      <Footer></Footer>
 
       </Element>
 
-      <Footer></Footer>
+      
 
     </div>
 
