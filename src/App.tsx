@@ -313,8 +313,8 @@ function App() {
               </div>
 
               <div className="item">
-                <div className="pointer observe fade delay-17"></div>
-                <div className="info observe fade delay-22">
+                <div className="pointer observe fade delay-4"></div>
+                <div className="info observe fade delay-8">
                   <div className="project">
                     <div className="featured tsp">Featured Project</div>
                     <div className="title">
@@ -340,8 +340,8 @@ function App() {
               </div>
 
               <div className="item">
-                <div className="pointer observe fade delay-17"></div>
-                <div className="info observe fade delay-22">
+                <div className="pointer observe fade delay-4"></div>
+                <div className="info observe fade delay-8">
                   <div className="project">
                     <div className="featured game">Featured Project</div>
                     <div className="title">

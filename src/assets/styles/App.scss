@@ -363,7 +363,7 @@ body {
 
     .landing-page{
 
-        grid-template-rows: 140px 1fr 140px;
+        grid-template-rows: 2px 1fr 140px;
 
         .footer{
             margin-top: 20px;
@@ -375,6 +375,7 @@ body {
         }
 
         .header{
+            display: none;
             flex-direction: column;
 
             .navigation{
@@ -393,7 +394,6 @@ body {
 
     min-height: calc(100vh - 60px);
     min-height: calc((var(--vh, 1vh) * 100) - 70px);
-    background: $black;
     margin-bottom: 200px;
 
     .content{
@@ -558,8 +558,7 @@ body {
 
 .contact-page{
     height: calc(100vh - 60px);
-    height: calc((var(--vh, 1vh) * 100) - 70px);
-    background: $black;
+    height: calc((var(--vh, 1vh) * 100) - 70px); 
     margin-bottom: 30px;
     position: relative;
 
