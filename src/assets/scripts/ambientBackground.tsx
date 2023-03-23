@@ -75,7 +75,7 @@ export default function ambientBackground({canvas, numberParticles} : ambientBac
                 grd.addColorStop(1, "rgba(255,255,255,0.1");
 
                 ctx.fillStyle = grd;
-
+                
                 ctx.beginPath();
                 ctx.arc(particle.x, particle.y, particle.size * 2, 0, 2 * Math.PI);
                 ctx.fill();

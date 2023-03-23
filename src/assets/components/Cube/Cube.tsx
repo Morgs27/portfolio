@@ -46,7 +46,7 @@ export default function initCube(canvasHolder:HTMLElement | null){
         enableDamping : true,
         dampingFactor : 0.25,
         zoomSpeed : 0.5,
-        rotateSpeed : 0.5
+        rotateSpeed : 0.5,
     } );
 
     // Resize Canvas on window resize
@@ -55,12 +55,29 @@ export default function initCube(canvasHolder:HTMLElement | null){
     }
     window.addEventListener( 'resize', onWindowResize );
 
+    let fps = 60;
+    let then = Date.now();
+    let interval = 1000 / fps;
+
     // Animation Loop
     let render = () => {
         requestAnimationFrame( render );
-        params.time += 0.02;
-        controls.update();
-        renderer.render( scene, camera );
+
+        let now = Date.now();
+        let delta = now - then;
+
+        // Limit FPS of animation
+        if (delta > interval) {
+            then = now - (delta % interval);
+
+
+            
+            params.time += 0.02;
+            controls.update();
+            renderer.render( scene, camera );
+
+        }
+
     };
 
     render();

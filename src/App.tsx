@@ -62,11 +62,16 @@ function App() {
       footerCube.style.opacity = '0.6';
       // @ts-ignore
       footerCube.style.transform = `rotate(${45 + window.pageYOffset / 2}deg)`
+
     }
+
+    let loader = document.querySelector('.loader');
+    // @ts-ignore
+    loader.style.display = 'none';
    
   }, [])
-  
 
+  
   return (
 
     
@@ -137,10 +142,11 @@ function App() {
 
           <div className="scrollHint observe fade up delay-25 duration-10">
               <div className="text">SCROLL</div>
-              <div className="line"></div>
+              {/* <div className="line"></div> */}
           </div>
 
-          <Seperator number = {1}></Seperator>
+          {/* <Seperator number = {1}></Seperator> */}
+          <Footer></Footer>
         </div>
 
         
@@ -234,7 +240,7 @@ function App() {
 
       </Element>
 
-      
+      <Footer></Footer>
 
       <Element className="projects-page page" id = 'about' name = 'projects'>
           
@@ -251,13 +257,13 @@ function App() {
           
           <div className="content">
 
-            <div className="verticalLine observe fade delay-12"></div>
+            <div className="verticalLine observe fade delay-10"></div>
 
             <div className="container">
 
               <div className="item">
-                <div className="pointer observe fade delay-17"></div>
-                <div className="info observe fade delay-22">
+                <div className="pointer observe fade delay-10"></div>
+                <div className="info observe fade delay-12">
                   <div className="project">
                     <div className="featured manager">Featured Project</div>
                     <div className="title">
@@ -285,8 +291,8 @@ function App() {
               </div>
 
               <div className="item">
-                <div className="pointer observe fade delay-17"></div>
-                <div className="info observe fade delay-22">
+                <div className="pointer observe fade delay-0"></div>
+                <div className="info observe fade delay-12">
                   <div className="project">
                     <div className="featured outfit">Featured Project</div>
                     <div className="title">
@@ -313,7 +319,7 @@ function App() {
               </div>
 
               <div className="item">
-                <div className="pointer observe fade delay-4"></div>
+                <div className="pointer observe fade delay-0"></div>
                 <div className="info observe fade delay-8">
                   <div className="project">
                     <div className="featured tsp">Featured Project</div>
@@ -340,7 +346,7 @@ function App() {
               </div>
 
               <div className="item">
-                <div className="pointer observe fade delay-4"></div>
+                <div className="pointer observe fade delay-0"></div>
                 <div className="info observe fade delay-8">
                   <div className="project">
                     <div className="featured game">Featured Project</div>
@@ -378,6 +384,8 @@ function App() {
           </div>
 
       </Element>
+
+      <Footer></Footer>
 
       <Element className="contact-page page" id = 'about' name = 'contact'>
           
@@ -426,10 +434,11 @@ function App() {
 
           
           
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
 
       </Element>
 
+      <Footer></Footer>
       
 
     </div>
