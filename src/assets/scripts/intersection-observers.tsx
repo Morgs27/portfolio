@@ -30,7 +30,7 @@ export default function addObservers(){
                         }
 
                     })
-                }, delay + duration);
+                }, delay + duration + 600);
 
             }
             else{

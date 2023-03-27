@@ -281,7 +281,7 @@ body {
                 @include flex;
                 font-size: 20px;
 
-                transform: translateX(-10px);
+                transform: translateX(-15px);
 
                 .button{
 
@@ -289,6 +289,7 @@ body {
                     padding:  2px 15px;
 
                 }
+
 
             }
 
@@ -359,7 +360,7 @@ body {
 
     .landing-page{
 
-        grid-template-rows: 2px 1fr 140px;
+        grid-template-rows: 2px 1fr 160px;
 
         .footer{
             margin-top: 20px;
@@ -501,7 +502,8 @@ body {
 
 
 .projects-page{
-    margin-top: 300px;
+    margin-top: 250px;
+    margin-bottom: 50px;
     .project{
         @include flex($direction: column, $align: flex-start);
         gap: 10px;
@@ -521,22 +523,70 @@ body {
             }
         }
         .title{
+            margin: 4px 0;
+            margin-top: 1px;
             color: rgba($white, 0.9) !important;
-            font-size: clamp(16px, 1.6vw, 18px) !important;
+            font-size: clamp(17px, 1.7vw, 19px) !important;
         }
         .techStack{
             margin-top: 0px !important;
             margin-bottom: 0px !important;
 
             *{
-            font-size: 22px !important;
+            font-size: 24px !important;
             }
+
+            img{
+                // width: 24px;
+                height: 24px;
+                margin-left: -3px;
+            }
+        }
+        .description{
+            margin: 2px 0;
+            color: rgba($white, 0.9);
+            font-size: clamp(11px, 1.5vw, 13px) !important;
+        }
+        .links{
+            margin: 0px 0;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            a{
+                @include font-roboto($size: 12px);
+                color: rgba($white, 0.6);
+                text-decoration: none;
+                gap: 7px;
+                display: flex;
+                align-items: center;
+                svg{
+                    font-size: 16px;
+                    color: $white;
+                }
+
+                &:nth-child(2){
+                    svg{
+                        color: rgba($white, 0.8);
+                    }
+                }
+
+                &:hover{
+                    color: rgba($white, 0.8);
+                }
+            }
+        }
+        .line{
+            width: 200px;
+            height: 3px;
+            margin: 2px 0;
+            background-image: repeating-linear-gradient(-45deg, transparent, transparent 0.05em, rgba($white, 0.2) 25%);
+            background-size:.5em .5em;
         }
         .display{
             margin: 5px;
-            margin-top: 20px;
+            margin-top: 10px;
             position: relative;
-            img{
+            img, video{
                 width: clamp(100px, 800px, 70vw);
 
             }
@@ -598,6 +648,15 @@ body {
     }
 }
 
+.landing-page .footer .scrollHint{
+    margin-left: 16px !important;
+    margin-bottom: 20px;
+}
+@media (hover: none){
+    .landing-page .footer .scrollHint{
+        margin-left: 0px !important;
+    }
+}
 
 
 

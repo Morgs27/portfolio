@@ -6,12 +6,14 @@ import frame from './assets/animations/frame.json';
 
 import { Link, Element } from 'react-scroll'
 
-import { FaCss3Alt, FaGithub, FaHtml5, FaJs, FaLinkedin, FaNodeJs, FaPhp, FaReact, FaSass} from 'react-icons/fa';
+import { FaCss3Alt, FaEye, FaGithub, FaHtml5, FaJs, FaLinkedin, FaNodeJs, FaPhp, FaReact, FaSass} from 'react-icons/fa';
 import {GrMail} from 'react-icons/gr'
 import {SiFirebase, SiMysql, SiSqlite, SiThreedotjs, SiTypescript, SiVite} from 'react-icons/si'
-
+import {BsArrowUpRight, BsBoxArrowInDownLeft} from 'react-icons/bs';
 import initCube from './assets/components/Cube/Cube';
-
+import {RxOpenInNewWindow} from 'react-icons/rx'
+import {VscGithub} from 'react-icons/vsc'
+import {FiGithub} from 'react-icons/fi'
 import addObservers from './assets/scripts/intersection-observers';
 import fixVh from './assets/scripts/fixVh';
 import ambientBackground from './assets/scripts/ambientBackground';
@@ -132,7 +134,7 @@ function App() {
           </div>
 
           <div className="cube-container">
-            <div className="cube observe fade down delay-12 duration-10" id = 'cube-container' >
+            <div className="cube observe fade down delay-20 duration-10" id = 'cube-container' >
             </div>
           </div>
 
@@ -146,7 +148,7 @@ function App() {
           </div>
 
           {/* <Seperator number = {1}></Seperator> */}
-          <Footer></Footer>
+          <Footer delay={30}></Footer>
         </div>
 
         
@@ -161,22 +163,22 @@ function App() {
               <div className="inner"></div>
               <div className="outer"></div>
             </div>
-            <div className="number observe fade down delay-10">01.</div>
-            <div className="title  observe fade down delay-10">ABOUT</div>
-            <div className="line  observe fade down delay-10"></div>
+            <div className="number observe fade down delay-5">01.</div>
+            <div className="title  observe fade down delay-5">ABOUT</div>
+            <div className="line  observe fade down delay-5"></div>
           </div>
 
           <div className="content">
 
-            <div className="verticalLine observe fade delay-15"></div>
+            <div className="verticalLine observe fade"></div>
 
             <div className="container">
 
               <div className="item">
 
-                <div className="pointer observe fade delay-17"></div>
+                <div className="pointer observe fade delay-5"></div>
 
-                <div className="info observe fade delay-22">
+                <div className="info observe fade delay-10">
                     <div className="title">
                       Some information about me...
                     </div>
@@ -193,8 +195,8 @@ function App() {
                 </div>
 
               <div className="item">
-                <div className="pointer observe fade delay-17"></div>
-                <div className="info observe fade delay-22">
+                <div className="pointer observe fade delay-5"></div>
+                <div className="info observe fade delay-10">
                   <div className="title">Some technologies I'm familiar with...</div>
                   <div className="techStack">
 
@@ -240,7 +242,7 @@ function App() {
 
       </Element>
 
-      <Footer></Footer>
+      <Footer delay={0}></Footer>
 
       <Element className="projects-page page" id = 'about' name = 'projects'>
           
@@ -269,9 +271,21 @@ function App() {
                     <div className="title">
                       SWGOH Team Manager
                     </div>
+                    <div className="links">
+                      <a href="https://swgohteammanager.com" target={'_blank'}>
+                        Website 
+                        <RxOpenInNewWindow></RxOpenInNewWindow>
+                        
+                      </a>
+                      <a href="">Code  <FiGithub></FiGithub>
+                     
+                      </a>
+                    </div>
+                    <div className="line"></div>
                     <div className="description">
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
                     </div>
+                   
                     <div className="techStack">
                       <FaHtml5></FaHtml5>
                       <FaCss3Alt></FaCss3Alt>
@@ -285,6 +299,8 @@ function App() {
                       <div className="border">
                       </div>
                     </div>
+
+
                   </div>
                 </div>
                     
@@ -292,20 +308,32 @@ function App() {
 
               <div className="item">
                 <div className="pointer observe fade delay-0"></div>
-                <div className="info observe fade delay-12">
+                <div className="info observe fade delay-8">
                   <div className="project">
                     <div className="featured outfit">Featured Project</div>
                     <div className="title">
                       Outfit of Tomorrow
                     </div>
+                    <div className="links">
+                      <a href="https://outfit-of-tomorrow.com" target={'_blank'}>
+                        Website 
+                        <RxOpenInNewWindow></RxOpenInNewWindow>
+                        
+                      </a>
+                      <a href="">Code  <FiGithub></FiGithub>
+                     
+                      </a>
+                    </div>
+                    <div className="line"></div>
                     <div className="description">
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
                     </div>
                     <div className="techStack">
-                      <FaHtml5></FaHtml5>
+                      <FaHtml5 title='HTML'></FaHtml5>
                       <FaCss3Alt></FaCss3Alt>
                       <FaJs></FaJs>
                       <SiFirebase></SiFirebase>
+                      <img src="./sanity-logo.png" alt="" />
                     </div>
                     
                     <div className="display">
@@ -326,6 +354,17 @@ function App() {
                     <div className="title">
                       TSP Visualizer
                     </div>
+                    <div className="links">
+                      <a href="https://swgohteammanager.com" target={'_blank'}>
+                        Website 
+                        <RxOpenInNewWindow></RxOpenInNewWindow>
+                        
+                      </a>
+                      <a href="">Code  <FiGithub></FiGithub>
+                     
+                      </a>
+                    </div>
+                    <div className="line"></div>
                     <div className="description">
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
                     </div>
@@ -351,21 +390,36 @@ function App() {
                   <div className="project">
                     <div className="featured game">Featured Project</div>
                     <div className="title">
-                      Idle Fish
+                      Boids Simulation
                     </div>
+                    <div className="links">
+                      <a href="https://swgohteammanager.com" target={'_blank'}>
+                        Website 
+                        <RxOpenInNewWindow></RxOpenInNewWindow>
+                        
+                      </a>
+                      <a href="">Code  <FiGithub></FiGithub>
+                     
+                      </a>
+                    </div>
+                    <div className="line"></div>
                     <div className="description">
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
                     </div>
                     <div className="techStack">
-                      <FaReact></FaReact>
+                      {/* <FaReact></FaReact>
                       <SiTypescript></SiTypescript>
                       <FaNodeJs></FaNodeJs>
                       <FaSass></FaSass>
+                      <SiVite></SiVite> */}
+                      <FaReact></FaReact>
+                      <SiTypescript></SiTypescript>
                       <SiVite></SiVite>
                     </div>
                     
                     <div className="display">
-                      <img src="./fish.PNG" alt="" />
+                      <video preload='metadata' autoPlay loop src="./boids.mkv"></video>
+                      {/* <img src="./fish.PNG" alt="" /> */}  
                       <div className="border">
                       </div>
                     </div>
@@ -385,7 +439,7 @@ function App() {
 
       </Element>
 
-      <Footer></Footer>
+      <Footer delay={0}></Footer>
 
       <Element className="contact-page page" id = 'about' name = 'contact'>
           
@@ -438,7 +492,7 @@ function App() {
 
       </Element>
 
-      <Footer></Footer>
+      <Footer delay={0}></Footer>
       
 
     </div>

@@ -1,7 +1,10 @@
 import { useEffect } from "react"
 
+type FooterProps = {
+  delay: number;
+}
 
-export default function Footer(){
+export default function Footer({delay} : FooterProps){
 
     useEffect(() => {
       
@@ -55,13 +58,13 @@ export default function Footer(){
   
     return (
 
-      <div className="footer-component observe">
+      <div className={"footer-component observe fade up delay-" + delay}>
         <div className="spin-cube">
           {/* <div className="cube-outer"></div> */}
         </div>
         <div className="load-covers">
-          <div className="load-cover"></div>
-          <div className="load-cover right"></div>
+          <div className={"load-cover delay-"+delay}></div>
+          <div className={"load-cover right delay-"+delay}></div>
         </div>
         <div className="cover"></div>
         <div className="grid"></div>
