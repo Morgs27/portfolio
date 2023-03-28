@@ -6,6 +6,9 @@ import frame from './assets/animations/frame.json';
 
 import { Link, Element } from 'react-scroll'
 
+import { useForm, ValidationError } from '@formspree/react';
+
+
 import { FaCss3Alt, FaEye, FaGithub, FaHtml5, FaJs, FaLinkedin, FaNodeJs, FaPhp, FaReact, FaSass} from 'react-icons/fa';
 import {GrMail} from 'react-icons/gr'
 import {SiFirebase, SiMysql, SiSqlite, SiThreedotjs, SiTypescript, SiVite} from 'react-icons/si'
@@ -22,6 +25,20 @@ import pageBreak from './assets/components/Footer';
 import PageBreak from './assets/components/Footer';
 import Footer from './assets/components/Footer';
 import Seperator from './assets/components/Seperator';
+import ContactForm from './assets/components/ContactForm/ContactForm';
+
+// Todo
+// - Add all projects to git hub + tidy up
+// - Links to all projects
+// - Text About Me + Descriping projects
+// - Contact Form
+// - Finish Ant Optimisation on TSP
+// - Add welcome modal to swgoh tm + fix current issues
+
+// - Resume
+// - Apply to jobs
+
+
 
 function App() {
 
@@ -320,9 +337,9 @@ function App() {
                         <RxOpenInNewWindow></RxOpenInNewWindow>
                         
                       </a>
-                      <a href="">Code  <FiGithub></FiGithub>
-                     
-                      </a>
+                      {/* <a href="">Code  <FiGithub></FiGithub>
+                
+                      </a> */}
                     </div>
                     <div className="line"></div>
                     <div className="description">
@@ -465,19 +482,8 @@ function App() {
                 <div className="pointer observe fade delay-17"></div>
 
                 <div className="info observe fade delay-22">
-                    <div className="title">
-                      Some information about me...
-                    </div>
-                    <br></br>
-                    <p>
-                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, dolore ratione maxime rem, veniam quis omnis nemo ducimus pariatur in odit voluptate autem error neque recusandae tenetur illo molestias nobis.
-                    </p>
-                    <br></br>
-                    <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto excepturi illum dolorem ipsum rem fugiat doloribus vero, atque adipisci, possimus placeat et deleniti, at repellendus nesciunt aperiam error fugit deserunt!
-                    </p>
-                    <br></br>
-                  </div>
+                    <ContactForm></ContactForm>
+                </div>
               </div>
 
 
