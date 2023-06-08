@@ -6,7 +6,7 @@ import frame from './assets/animations/frame.json';
 
 import { Link, Element } from 'react-scroll'
 
-import { useForm, ValidationError } from '@formspree/react';
+// import { useForm, ValidationError } from '@formspree/react';
 
 
 import { FaCss3Alt, FaEye, FaGithub, FaHtml5, FaJs, FaLinkedin, FaNodeJs, FaPhp, FaReact, FaSass} from 'react-icons/fa';
@@ -42,6 +42,8 @@ import ContactForm from './assets/components/ContactForm/ContactForm';
 
 function App() {
 
+
+
   useEffect(() => {
 
     // Add a `--vh` variable to account for mobile browsers
@@ -51,9 +53,7 @@ function App() {
     let cubeContainer = document.getElementById('cube-container')
     initCube(cubeContainer)
 
-    // Add Intersection Observers to elements
-    addObservers();
-
+    
     // Add Mouse Trailer
     // const trailer = document.getElementById('trailer');
     // initTrailer(trailer)
@@ -69,7 +69,7 @@ function App() {
     let footerText = footer?.querySelector('.text')
     let footerCube = footer?.querySelector('.line');
     window.onscroll = e => {
-
+      
       if (window.pageYOffset == 0){
         footerText?.classList.remove('hide');
       }
@@ -83,10 +83,19 @@ function App() {
       footerCube.style.transform = `rotate(${45 + window.pageYOffset / 2}deg)`
 
     }
+    
+    setTimeout(() => {
 
-    let loader = document.querySelector('.loader');
-    // @ts-ignore
-    loader.style.display = 'none';
+      
+      // Add Intersection Observers to elements
+      addObservers();
+      
+      // @ts-ignore
+      document.getElementById('myVideo').style.display = 'none';
+
+      document.documentElement.style.background = 'transparent';
+
+    }, 2000);
    
   }, [])
 
@@ -372,7 +381,7 @@ function App() {
                       TSP Visualizer
                     </div>
                     <div className="links">
-                      <a href="https://swgohteammanager.com" target={'_blank'}>
+                      <a href="https://tspvisualiser.dev" target={'_blank'}>
                         Website 
                         <RxOpenInNewWindow></RxOpenInNewWindow>
                         
@@ -410,7 +419,7 @@ function App() {
                       Boids Simulation
                     </div>
                     <div className="links">
-                      <a href="https://swgohteammanager.com" target={'_blank'}>
+                      <a href="https://boids.dev" target={'_blank'}>
                         Website 
                         <RxOpenInNewWindow></RxOpenInNewWindow>
                         
@@ -435,7 +444,7 @@ function App() {
                     </div>
                     
                     <div className="display">
-                      <video preload='metadata' autoPlay loop src="./boids.mkv"></video>
+                      <video preload='metadata' autoPlay muted loop src="./boids.mkv"></video>
                       {/* <img src="./fish.PNG" alt="" /> */}  
                       <div className="border">
                       </div>
@@ -493,6 +502,7 @@ function App() {
           </div>
 
           
+
           
       {/* <Footer></Footer> */}
 
