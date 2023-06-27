@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morgan Daniel</title>
+
+    <script type="module" crossorigin src="/assets/index-00fa92b2.js"></script>
+    <link rel="stylesheet" href="/assets/index-2e24863d.css">
+  </head>
+  <body>
+    <style>
+      html{
+        background: #262730;
+      }
+      #myVideo {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+    <video preload='metadata' id = 'myVideo' width = '100' muted preload = "auto" autoplay = "autoplay" loop src="/assets/loader-0f3ab8c0.mkv"></video>
+    <script>
+      var video = document.getElementById("myVideo");
+      video.playbackRate = 2;
+    </script>
+
+    <div id="root"></div>
+    
+
+  </body>
+</html>
