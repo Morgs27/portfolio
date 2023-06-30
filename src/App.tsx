@@ -300,7 +300,9 @@ function App() {
                     </div>
                     <div className="line"></div>
                     <div className="description">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
+                      Companion tool for the mobile game 'Star Wars Galaxy of Heroes'. 
+                      Use the guest mode to try out the websites features using the in-game 
+                      data of one of the games' popular content creators.
                     </div>
                    
                     <div className="techStack">
@@ -343,7 +345,12 @@ function App() {
                     </div>
                     <div className="line"></div>
                     <div className="description">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
+                      Freelance website built for the company 'Outfit-of-Tomorrow'. 
+                      Contains an interactive design desk allowing you to build your 
+                      possible outfits with a selection of sustainable products. Uses 
+                      the Sanity CMS to store product and blog data, making it easy
+                      to maintain.
+
                     </div>
                     <div className="techStack">
                       <FaHtml5 title='HTML'></FaHtml5>
@@ -372,18 +379,18 @@ function App() {
                       TSP Visualizer
                     </div>
                     <div className="links">
-                      <a href="https://swgohteammanager.com" target={'_blank'}>
+                      <a href="https://tspvisualiser.dev" target={'_blank'}>
                         Website 
                         <RxOpenInNewWindow></RxOpenInNewWindow>
                         
                       </a>
-                      <a href="">Code  <FiGithub></FiGithub>
+                      <a href="https://github.com/Morgs27/pathfinding-visualizer" target={'_blank'} >Code  <FiGithub></FiGithub>
                      
                       </a>
                     </div>
                     <div className="line"></div>
                     <div className="description">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
+                      An interactive visualisation of a group of the algorithms that can be used to solve 'The Traveling Salesman Problem', a well known mathematical optimization problem. 
                     </div>
                     <div className="techStack">
                       <FaReact></FaReact>
@@ -392,7 +399,8 @@ function App() {
                     </div>
                     
                     <div className="display">
-                      <img src="./map.PNG" alt="" />
+                      {/* <img src="./map.PNG" alt="" /> */}
+                      <img src="tsp.gif" alt="" />
                       <div className="border">
                       </div>
                     </div>
@@ -410,18 +418,19 @@ function App() {
                       Boids Simulation
                     </div>
                     <div className="links">
-                      <a href="https://swgohteammanager.com" target={'_blank'}>
+                      <a href="https://boids.dev" target={'_blank'}>
                         Website 
                         <RxOpenInNewWindow></RxOpenInNewWindow>
                         
                       </a>
-                      <a href="">Code  <FiGithub></FiGithub>
+                      <a href="https://github.com/Morgs27/boid-simulations" target={'_blank'}>Code  <FiGithub></FiGithub>
                      
                       </a>
                     </div>
                     <div className="line"></div>
                     <div className="description">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus alias explicabo, adipisci assumenda rerum beatae eius odit a est dolore quis cumque molestias reiciendis, illum obcaecati! Perspiciatis praesentium nemo vitae.
+                      Interactive visualisation of  a group of boids simulated to behave like animals in flocks or swarms.
+                      Play around with the boids's settings to create some stunning visuals.
                     </div>
                     <div className="techStack">
                       {/* <FaReact></FaReact>
@@ -435,8 +444,8 @@ function App() {
                     </div>
                     
                     <div className="display">
-                      <video preload='metadata' autoPlay loop src="./boids.mkv"></video>
-                      {/* <img src="./fish.PNG" alt="" /> */}  
+                      {/* <video  autoPlay loop src="./boids-short.mp4"></video> */}
+                      <img src="./boids-short.gif" alt="" />  
                       <div className="border">
                       </div>
                     </div>
