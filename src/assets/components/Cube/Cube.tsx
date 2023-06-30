@@ -55,7 +55,7 @@ export default function initCube(canvasHolder:HTMLElement | null){
     }
     window.addEventListener( 'resize', onWindowResize );
 
-    let fps = 60;
+    let fps = 20;
     let then = Date.now();
     let interval = 1000 / fps;
 

@@ -360,23 +360,25 @@ body {
 
     .landing-page{
 
-        grid-template-rows: 2px 1fr 160px;
+        grid-template-rows: 60px 1fr 160px;
 
         .footer{
             margin-top: 20px;
         }
 
         .content{
-            margin-top: 30px;
+            margin-top: 10px;
             margin-bottom: 30px;
         }
 
         .header{
-            display: none;
+            margin-top: 20px;
+
+            // display: none;
             flex-direction: column;
 
             .navigation{
-
+                display: none;
                 justify-content: center;
                 margin-top: 20px;
 
@@ -470,6 +472,99 @@ body {
                         transform: rotate(45deg);
                         opacity: 0;
                     }
+
+                    .pair{
+                        margin: 25px;
+                        margin-left: 0px;
+                        margin-right: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 20px;
+
+                        .techItem{
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 30px;
+                           
+                            svg{
+                                margin: 0;
+                            }
+                        }
+                    }
+
+
+                    .pair .techItem::after{
+                        margin: 0 !important;
+                        content: '';
+                        position: absolute;
+                        font-size: 9px;
+                        transform: translateY(33px);
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: 0.5s;
+                    }
+
+                    .techItem:hover{
+                        cursor: pointer;
+                    }
+
+                    #html::after{
+                        content: 'HTML';
+                    }
+
+                    #react::after{
+                        content: 'React.js'
+                    }
+
+                    #js::after{
+                        content: 'JavaScript'
+                    }
+
+                    #ts::after{
+                        content: 'TypeScript'
+                    }
+
+                    #css::after{
+                        content: 'CSS'
+                    }
+
+                    #sass::after{
+                        content: 'SCSS';
+                    }
+
+                    #php::after{
+                        content: 'PHP'
+                    }
+
+                    #node::after{
+                        content: 'Node.js'
+                    }
+
+                    #sql::after{
+                        content: 'SQL'
+                    }
+
+                    #firebase::after{
+                        content: 'Firebase'
+                    }
+
+                    #three::after{
+                        content: 'Three.js'
+                    }
+
+                    #vite::after{
+                        content: 'Vite'
+                    }
+
+                    .techItem:hover::after{
+                        opacity: 0.8;
+                        transform: translateY(35px);
+  
+                    }
+
 
                 }
 

@@ -51,19 +51,16 @@ function App() {
     let cubeContainer = document.getElementById('cube-container')
     initCube(cubeContainer)
 
-    // Add Intersection Observers to elements
-    addObservers();
-
     // Add Mouse Trailer
     // const trailer = document.getElementById('trailer');
     // initTrailer(trailer)
-
+    
     // Initialize Particle Background
     let backgroundCanvas = document.querySelector('.background') as HTMLCanvasElement;
     backgroundCanvas.width = window.innerWidth;
     backgroundCanvas.height = document.getElementsByTagName('body')[0].offsetHeight;
     ambientBackground({canvas: backgroundCanvas, numberParticles:100});
-
+    
     // Hide Scroll Hint on scroll
     let footer = document.querySelector('.footer');
     let footerText = footer?.querySelector('.text')
@@ -76,18 +73,34 @@ function App() {
       else {
         footerText?.classList.add('hide');
       }
-
+      
       // @ts-ignore
       footerCube.style.opacity = '0.6';
       // @ts-ignore
       footerCube.style.transform = `rotate(${45 + window.pageYOffset / 2}deg)`
-
+      
     }
+    
+    let loader = document.getElementById('myVideo');
+    setTimeout(() => {
+      
+      // Add Intersection Observers to elements
+      addObservers();
+      
+      loader?.classList.add('fade');
+      loader?.classList.add('down')
 
-    let loader = document.querySelector('.loader');
-    // @ts-ignore
-    loader.style.display = 'none';
-   
+      setTimeout(() => {
+
+        // @ts-ignore
+        loader.style.display = 'none';
+        
+      }, 300);
+
+      document.documentElement.style.background = 'transparent';
+     
+    }, 2000);
+
   }, [])
 
   
@@ -106,7 +119,7 @@ function App() {
       <div className="landing-page">
 
         <div className="header">
-          <a href = '#' className="resume observe fade down delay-12">
+          <a href = '../resume.pdf' target = '_blank' className="resume observe fade down delay-12">
             <div className="icon" >
               <div className="square1"></div>
               <div className="square2"></div>
@@ -133,16 +146,16 @@ function App() {
 
           <div className="text">
             <div className="title observe fade">Morgan Daniel</div>
-            <div className="sub-title observe fade delay-2">FULL-STACK DEVELOPER</div>
+            <div className="sub-title observe fade delay-2">WEB DEVELOPER</div>
             <div className="buttons">
 
-              <a href="" className="button float-hover interactive-surround observe fade delay-6 duration-11">
+              <a href="https://github.com/Morgs27" target = '_blank' className="button float-hover interactive-surround observe fade delay-6 duration-11">
                 <FaGithub></FaGithub>
               </a>
-              <a href="" className="button float-hover interactive-surround observe fade delay-7 duration-10">
+              <a href="https://www.linkedin.com/in/morgan-daniel-9011b7258/" target = '_blank' className="button float-hover interactive-surround observe fade delay-7 duration-10">
                 <FaLinkedin></FaLinkedin>
               </a>
-              <a href="" className="button float-hover interactive-surround observe fade delay-8 duration-9">
+              <a href="mailto:morganjdaniel@gmail.com" className="button float-hover interactive-surround observe fade delay-8 duration-9">
                <GrMail></GrMail>
               </a>
 
@@ -201,11 +214,16 @@ function App() {
                     </div>
                     <br></br>
                     <p>
-                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, dolore ratione maxime rem, veniam quis omnis nemo ducimus pariatur in odit voluptate autem error neque recusandae tenetur illo molestias nobis.
+                    I'm Morgan Daniel, a self-taught web developer actively pursuing a 
+                    degree in Computing Science at The University of Edinburgh.
                     </p>
                     <br></br>
                     <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto excepturi illum dolorem ipsum rem fugiat doloribus vero, atque adipisci, possimus placeat et deleniti, at repellendus nesciunt aperiam error fugit deserunt!
+                    My journey into web development began as I sought to improve the 
+                    functionality and visual appeal of a website I used frequently. 
+                    This sparked my interest in the process of learning various 
+                    programming languages and frameworks. 
+
                     </p>
                     <br></br>
                   </div>
@@ -218,36 +236,38 @@ function App() {
                   <div className="techStack">
 
                     <div className="pair">
-                      <FaHtml5></FaHtml5>
-                      <FaReact></FaReact>
+                      <div className = 'techItem interactive-surround' id='html'><FaHtml5  ></FaHtml5></div>
+                      <div className = 'techItem interactive-surround' id='react'><FaReact  ></FaReact></div>
                     </div>
 
                     <div className="pair">
-                      <FaJs></FaJs>
-                      <SiTypescript></SiTypescript>
+                      <div className = 'techItem' id='js'><FaJs  ></FaJs></div>
+                      <div className = 'techItem' id='ts'><SiTypescript  ></SiTypescript></div>
                     </div>
 
                     <div className="pair">
-                      <FaCss3Alt></FaCss3Alt>
-                      <FaSass></FaSass>
+                      <div className = 'techItem' id='css'><FaCss3Alt  ></FaCss3Alt></div>
+                      <div className = 'techItem' id='sass'><FaSass ></FaSass></div>
                     </div>
 
                     <div className="pair">
-                      <FaPhp></FaPhp>
-                      <FaNodeJs></FaNodeJs>
+                      <div className = 'techItem' id='php'><FaPhp  ></FaPhp></div>
+                      <div className = 'techItem' id='node'><FaNodeJs  ></FaNodeJs></div>
                     </div>
 
                     <div className="pair">
-                      <SiMysql></SiMysql>
-                      <SiFirebase></SiFirebase>
+                      <div className = 'techItem' id='sql'><SiMysql  ></SiMysql></div>
+                      <div className = 'techItem' id='firebase'><SiFirebase ></SiFirebase></div>
                     </div>
 
                     <div className="pair">
-                      <SiThreedotjs></SiThreedotjs>
-                      <SiVite></SiVite>
+                      <div className = 'techItem' id='three'><SiThreedotjs  ></SiThreedotjs></div>
+                      <div className = 'techItem' id='vite'><SiVite ></SiVite></div>
                     </div>
                     
                   </div>
+
+              
                   
                 </div>
               </div>
@@ -289,7 +309,7 @@ function App() {
                       SWGOH Team Manager
                     </div>
                     <div className="links">
-                      <a href="https://swgohteammanager.com" target={'_blank'}>
+                      <a href="https://swgohteammanager.com/use_as_guest" target={'_blank'}>
                         Website 
                         <RxOpenInNewWindow></RxOpenInNewWindow>
                         
@@ -301,8 +321,11 @@ function App() {
                     <div className="line"></div>
                     <div className="description">
                       Companion tool for the mobile game 'Star Wars Galaxy of Heroes'. 
-                      Use the guest mode to try out the websites features using the in-game 
-                      data of one of the games' popular content creators.
+                      Use the guest mode to try out the websites features.
+
+                      The back-end is built using PHP with a MySQL database, with the front-end 
+                      being comprised of vanilla HTML, CSS and JS. The SWGOH.gg API is used to retrive
+                      player date along with a stat calculation API to process the values. 
                     </div>
                    
                     <div className="techStack">
@@ -346,10 +369,11 @@ function App() {
                     <div className="line"></div>
                     <div className="description">
                       Freelance website built for the company 'Outfit-of-Tomorrow'. 
-                      Contains an interactive design desk allowing you to build your 
+                      Contains an interactive design desk allowing users to build their 
                       possible outfits with a selection of sustainable products. Uses 
                       the Sanity CMS to store product and blog data, making it easy
-                      to maintain.
+                      to maintain. The frontend is built using vanilla HTML, CSS and
+                      JS. 
 
                     </div>
                     <div className="techStack">
@@ -390,7 +414,10 @@ function App() {
                     </div>
                     <div className="line"></div>
                     <div className="description">
-                      An interactive visualisation of a group of the algorithms that can be used to solve 'The Traveling Salesman Problem', a well known mathematical optimization problem. 
+                      An interactive visualisation of a group of the algorithms 
+                      that can be used to solve 'The Traveling Salesman Problem'. 
+                      The TSP problem is a well known mathematical optimization problem where the aim 
+                      is to find the shortest distance between a set of points. 
                     </div>
                     <div className="techStack">
                       <FaReact></FaReact>
@@ -399,8 +426,8 @@ function App() {
                     </div>
                     
                     <div className="display">
-                      {/* <img src="./map.PNG" alt="" /> */}
-                      <img src="tsp.gif" alt="" />
+                      <img src="./map.PNG" alt="" />
+                      {/* <img src="tsp.gif" alt="" /> */}
                       <div className="border">
                       </div>
                     </div>
