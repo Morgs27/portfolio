@@ -119,7 +119,7 @@ function App() {
       <div className="landing-page">
 
         <div className="header">
-          <a href = '../resume.pdf' target = '_blank' className="resume observe fade down delay-12">
+          <a href = '/resume.pdf' target = '_blank' className="resume observe fade down delay-12">
             <div className="icon" >
               <div className="square1"></div>
               <div className="square2"></div>
