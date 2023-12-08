@@ -309,12 +309,12 @@ function App() {
                       SWGOH Team Manager
                     </div>
                     <div className="links">
-                      <a href="https://swgohteammanager.com/use_as_guest" target={'_blank'}>
+                      <a href="https://swgohteammanager.com/use_as_guest.php" target={'_blank'}>
                         Website 
                         <RxOpenInNewWindow></RxOpenInNewWindow>
                         
                       </a>
-                      <a href="">Code  <FiGithub></FiGithub>
+                      <a href="https://github.com/Morgs27/swgoh-website" target={'_blank'}>Code  <FiGithub></FiGithub>
                      
                       </a>
                     </div>
