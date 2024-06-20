@@ -27,19 +27,6 @@ import Footer from './assets/components/Footer';
 import Seperator from './assets/components/Seperator';
 import ContactForm from './assets/components/ContactForm/ContactForm';
 
-// Todo
-// - Add all projects to git hub + tidy up
-// - Links to all projects
-// - Text About Me + Descriping projects
-// - Contact Form
-// - Finish Ant Optimisation on TSP
-// - Add welcome modal to swgoh tm + fix current issues
-
-// - Resume
-// - Apply to jobs
-
-
-
 function App() {
 
   useEffect(() => {
