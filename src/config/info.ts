@@ -12,7 +12,7 @@ type Info = {
 };
 const info: Info = {
   name: "Morgan Daniel",
-  title: "Software Developer",
+  title: "SOFTWARE DEVELOPER",
   description: `<p>
         I'm Morgan Daniel, a self-taught web developer actively
         pursuing a degree in Computing Science at The University of

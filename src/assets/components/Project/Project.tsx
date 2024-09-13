@@ -1,16 +1,17 @@
 import { FiGithub } from "react-icons/fi";
 import { RxOpenInNewWindow } from "react-icons/rx";
-import { skills } from "../../../config/skills";
+import { SkillName, skills } from "../../../config/skills";
 
 export type ProjectProps = {
   name: string;
   description: string;
-  techStack: string[];
+  techStack: SkillName[];
   image: string;
   featured: boolean;
   githubLink?: string;
   websiteLink: string;
   color?: string;
+  hidden?: boolean;
 };
 
 const Project = ({
@@ -22,9 +23,10 @@ const Project = ({
   githubLink,
   websiteLink,
   color,
+  hidden,
 }: ProjectProps) => {
   return (
-    <div className="item">
+    <div className={`item ${hidden ? "hidden" : ""}`}>
       <div className="pointer observe fade delay-0"></div>
       <div className="info observe fade delay-8">
         <div className="project">

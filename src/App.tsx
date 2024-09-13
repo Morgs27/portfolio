@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./assets/styles/App.scss";
 import info from "./config/info";
 import { Link, Element } from "react-scroll";
@@ -70,6 +70,8 @@ function App() {
       document.documentElement.style.background = "transparent";
     }, 2000);
   }, []);
+
+  const [showMoreProjects, setShowMoreProjects] = useState(false);
 
   return (
     <div className="App">
@@ -220,9 +222,39 @@ function App() {
           <div className="verticalLine observe fade delay-10"></div>
 
           <div className="container">
-            {projects.map((project: ProjectProps) => (
-              <Project key={project.name} {...project}></Project>
-            ))}
+            {projects
+              .filter((project: ProjectProps) => project.featured)
+              .map((project: ProjectProps) => (
+                <Project key={project.name} {...project}></Project>
+              ))}
+
+            {!showMoreProjects && (
+              <a
+                href={info.resume}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowMoreProjects(true);
+                }}
+                target="_blank"
+                className="resume observe fade down delay-12 show-more"
+              >
+                <div className="icon">
+                  <div className="square1"></div>
+                  <div className="square2"></div>
+                </div>
+                <div className="text">SHOW MORE PROJECTS</div>
+              </a>
+            )}
+
+            {projects
+              .filter((project: ProjectProps) => !project.featured)
+              .map((project: ProjectProps) => (
+                <Project
+                  hidden={!showMoreProjects}
+                  key={project.name}
+                  {...project}
+                ></Project>
+              ))}
           </div>
         </div>
       </Element>

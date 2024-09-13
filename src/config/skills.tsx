@@ -8,10 +8,17 @@ import {
   FaSass,
 } from "react-icons/fa";
 import {
+    SiExpress,
   SiFirebase,
+  SiGooglecloud,
+  SiJest,
+  SiMongodb,
   SiMysql,
+  SiNextdotjs,
+  SiPython,
   SiThreedotjs,
   SiTypescript,
+  SiVercel,
   SiVite,
 } from "react-icons/si";
 
@@ -20,7 +27,7 @@ type Skill = {
   fullName: string;
 };
 
-export const skills: { [key: string]: Skill } = {
+export const skills = {
   React: { icon: <FaReact />, fullName: "React.js" },
   HTML: { icon: <FaHtml5 title="HTML" />, fullName: "HTML" },
   CSS: { icon: <FaCss3Alt />, fullName: "CSS" },
@@ -37,7 +44,15 @@ export const skills: { [key: string]: Skill } = {
   Sass: { icon: <FaSass />, fullName: "SCSS" },
   NodeJS: { icon: <FaNodeJs />, fullName: "Node.js" },
   ThreeJS: { icon: <SiThreedotjs />, fullName: "Three.js" },
+  NextJS: { icon: <SiNextdotjs />, fullName: "Next.js" },
+  Python: { icon: <SiPython />, fullName: "Python" },
+  Express: { icon: <SiExpress />, fullName: "Express" },
+  MongoDB: { icon: <SiMongodb />, fullName: "MongoDB" },
+  Jest: { icon: <SiJest />, fullName: "Jest" },
+  Vercel: { icon: <SiVercel />, fullName: "Vercel" },
 };
+
+export type SkillName = keyof typeof skills;
 
 export const displayedSkills = [
   "HTML",
@@ -49,7 +64,7 @@ export const displayedSkills = [
   "PHP",
   "NodeJS",
   "MySQL",
-  "Firebase",
+  "MongoDB",
   "ThreeJS",
   "Vite",
 ];
