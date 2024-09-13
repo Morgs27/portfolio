@@ -32,7 +32,7 @@ const info: Info = {
   github: "https://github.com/Morgs27",
   twitter: "https://twitter.com/Morgs27",
   instagram: "https://www.instagram.com/morgs27/",
-  resume: "/resume.pdf",
+  resume: "/resume-2024-public.pdf",
 };
 
 export default info;
